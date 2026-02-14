@@ -1,0 +1,33 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "start": "npx vite",
+    "build": "vite build",
+    "deploy": "npm run build && gh-pages -d dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Luayabbas1981/portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "sass": "^1.97.3",
+    "vite": "^6.1.0",
+    "vite-plugin-static-copy": "^2.2.0"
+  },
+  "bugs": {
+    "url": "https://github.com/Luayabbas1981/portfolio/issues"
+  },
+  "homepage": "https://github.com/Luayabbas1981/portfolio#readme",
+  "dependencies": {
+    "3d-slider": "^1.2.1",
+    "bootstrap": "^5.3.3"
+  }
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>portfolio</title>
+  </head>
+  <body>
+    <header class="fixed-top d-flex justify-content-around">
+      <div class="container m-auto d-flex justify-content-around align-items-center">
+        <div>Works</div>
+        <div>About me</div>
+        <div>Contact</div>
+      </div>
+    </header>
+    <main>
+      <section class="works position-relative">
+        <div class="css-section">CSS</div>
+        <div class="dom-section">DOM</div>
+        <div class="spa-section">SPA</div>
+        <div class="canvas-section">CANVAS</div>
+        <div class="npm-section">NPM</div>
+      </section>
+      <section class="about-me"></section>
+      <section class="contact"></section>
+    </main>
+    <div class="start-page">
+      <div class="row container m-auto gap-5 gap-md-0">
+        <div class="list-con col-md-7">
+          <div style="--x: -1; --delay: 1">View works</div>
+          <div style="--x: -1; --delay: 2">About me</div>
+          <div style="--x: -1; --delay: 3">Contact</div>
+        </div>
+        <div class="image-con col-md-4" style="--x: 1; --delay: 4">
+          <img src="./assets/images/my-image.jpeg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

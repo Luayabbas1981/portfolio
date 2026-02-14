@@ -7,23 +7,36 @@
   </head>
   <body>
     <header class="fixed-top d-flex justify-content-around">
-      <div class="container m-auto d-flex justify-content-around align-items-center">
+      <div
+        class="container m-auto d-flex justify-content-around align-items-center"
+      >
         <div>Works</div>
         <div>About me</div>
         <div>Contact</div>
       </div>
     </header>
     <main>
-      <section class="works position-relative">
-        <div class="css-section">CSS</div>
-        <div class="dom-section">DOM</div>
-        <div class="spa-section">SPA</div>
-        <div class="canvas-section">CANVAS</div>
-        <div class="npm-section">NPM</div>
+      <section class="works-pages position-relative">
+        <div id="css-section"></div>
+        <div id="dom-section"></div>
+        <div id="spa-section"></div>
+        <div id="canvas-section"></div>
+        <div id="npm-section"></div>
       </section>
       <section class="about-me"></section>
       <section class="contact"></section>
     </main>
+    <div class="works-navy d-none">
+      <div
+        class="container h-100 m-auto d-flex flex-column flex-lg-row justify-content-center gap-4 gap-lg-0 justify-content-lg-around align-items-center position-relative"
+      >
+        <div data-category="css-section">CSS</div>
+        <div data-category="dom-section">DOM</div>
+        <div data-category="spa-section">SPA</div>
+        <div data-category="canvas-section">CANVAS</div>
+        <div data-category="npm-section">NPM</div>
+      </div>
+    </div>
     <div class="start-page">
       <div class="row container m-auto gap-5 gap-md-0">
         <div class="list-con col-md-7">

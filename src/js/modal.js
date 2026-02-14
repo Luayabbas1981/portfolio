@@ -1,4 +1,5 @@
 const startPage = document.querySelector(".start-page");
+const worksNavy = document.querySelector(".works-navy");
 const navItems = document.querySelectorAll(".start-page .list-con div");
 const imageCon = document.querySelector(".image-con");
 navItems.forEach((item) => {
@@ -7,6 +8,7 @@ navItems.forEach((item) => {
     imageCon.classList.add("fade-out");
     setTimeout(() => {
       startPage.classList.add("d-none");
+      worksNavy.classList.remove("d-none");
     }, 4000);
   });
 });

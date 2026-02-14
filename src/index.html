@@ -10,9 +10,9 @@
       <div
         class="container m-auto d-flex justify-content-around align-items-center"
       >
-        <div>Works</div>
-        <div>About me</div>
-        <div>Contact</div>
+        <div id="works">Works</div>
+        <div id="about-me"> About me</div>
+        <div id="contact">Contact</div>
       </div>
     </header>
     <main>
@@ -28,7 +28,7 @@
     </main>
     <div class="works-navy d-none">
       <div
-        class="container h-100 m-auto d-flex flex-column flex-lg-row justify-content-center gap-4 gap-lg-0 justify-content-lg-around align-items-center position-relative"
+        class="container h-100 m-auto d-flex justify-content-center gap-4 gap-lg-0 justify-content-lg-around align-items-center position-relative"
       >
         <div data-category="css-section">CSS</div>
         <div data-category="dom-section">DOM</div>
@@ -40,12 +40,12 @@
     <div class="start-page">
       <div class="row container m-auto gap-5 gap-md-0">
         <div class="list-con col-md-7">
-          <div style="--x: -1; --delay: 1">View works</div>
-          <div style="--x: -1; --delay: 2">About me</div>
-          <div style="--x: -1; --delay: 3">Contact</div>
+          <div style="--x: -1; --delay: 1" data-section="works">View works</div>
+          <div style="--x: -1; --delay: 2" data-section="about-me">About me</div>
+          <div style="--x: -1; --delay: 3" data-section="contact">Contact</div>
         </div>
         <div class="image-con col-md-4" style="--x: 1; --delay: 4">
-          <img src="./assets/images/my-image.jpeg" alt="" />
+          <img src="./assets/images/my-image.png" alt="" />
         </div>
       </div>
     </div>

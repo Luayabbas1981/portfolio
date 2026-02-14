@@ -61,10 +61,20 @@
       }
     }
   }
+
   @keyframes fadeIn {
     to {
       opacity: 1;
       translate: 0;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .container {
+      flex-direction: column;
+      &.navy-pressed {
+        flex-direction: row !important;
+        font-size: 1rem;
+      }
     }
   }
 }

@@ -22,6 +22,10 @@ const startPageNavItems = document.querySelectorAll(
 const aboutMeCategories = document.querySelectorAll(
   ".about-me-categories .title",
 );
+const contact = document.getElementById("contact");
+const contactIcons = document.querySelectorAll(".icon");
+const contactInfos = document.querySelector(".infos");
+const contactInfosLink = contactInfos.children[0];
 const imageCon = document.querySelector(".image-con");
 
 // Variables
@@ -130,6 +134,45 @@ aboutMeCategories.forEach((category, index) => {
     }, 1500);
     setTimeout(() => {
       category.nextElementSibling.classList.add("about-me-sec-scale");
+    }, 500);
+  });
+});
+
+// Contact
+contactIcons.forEach((icon) => {
+  icon.addEventListener("click", function () {
+    if (this.classList.contains("third-icon")) return;
+    contactInfos.classList.add("move-contact-info");
+
+    const first = document.querySelector(".first-icon");
+    const second = document.querySelector(".second-icon");
+    const third = document.querySelector(".third-icon");
+
+    if (this.classList.contains("first-icon")) {
+      first.classList.replace("first-icon", "third-icon");
+      second.classList.replace("second-icon", "first-icon");
+      third.classList.replace("third-icon", "second-icon");
+    } else if (this.classList.contains("second-icon")) {
+      second.classList.replace("second-icon", "third-icon");
+      first.classList.replace("first-icon", "second-icon");
+      third.classList.replace("third-icon", "first-icon");
+    }
+
+    const thirdIcon = document.querySelector(".third-icon");
+    contactInfosLink.target = "_blank";
+    setTimeout(() => {
+      contactInfos.classList.remove("move-contact-info");
+      if (thirdIcon.dataset.contact == "gmail") {
+        contactInfosLink.textContent = "abbasluay1981@gmail.com";
+        contactInfosLink.href = "mailto:abbasluay1981@gmail.com";
+      } else if (thirdIcon.dataset.contact == "github") {
+        contactInfosLink.textContent = "Github";
+        contactInfosLink.href = "https://github.com/Luayabbas1981";
+      } else {
+        contactInfosLink.textContent = "Linkedin";
+        contactInfosLink.href =
+          "https://www.linkedin.com/in/luay-abbas-79531a24a/";
+      }
     }, 500);
   });
 });

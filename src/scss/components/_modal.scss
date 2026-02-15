@@ -64,7 +64,12 @@
       }
     }
   }
-
+  &.position-bottom {
+    height: 4rem;
+    background-color: transparent;
+    inset: unset;
+    bottom: 0;
+  }
   @keyframes fadeIn {
     to {
       opacity: 1;

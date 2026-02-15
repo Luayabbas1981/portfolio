@@ -49,7 +49,7 @@ startPageNavItems.forEach((item) => {
         worksNavy.classList.remove("d-none");
       } else {
         header.classList.remove("d-none");
-        worksNavy.classList.add("position-bottom");
+        worksNavy.classList.add("navy-pressed");
       }
       sections.forEach((section) => {
         item.dataset.section === section.dataset.section

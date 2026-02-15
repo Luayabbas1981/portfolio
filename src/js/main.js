@@ -33,9 +33,11 @@ const rotateCover = document.querySelector(".rotate-cover");
 const rotateIcon = document.querySelector(".rotate-icon");
 // Variables
 let currentPage = null;
+let projectsCurrentCategory = "css";
 let currentWorkPage = workPages[0];
 let sliderCon = currentWorkPage.querySelector(".slider");
 let isSliderRotateAlwaysOn = false;
+let worksNavyDisable = false;
 
 // Modal
 startPageNavItems.forEach((item) => {
@@ -66,8 +68,9 @@ startPageNavItems.forEach((item) => {
   });
 });
 
-worksNavyItems.forEach((item, index) => {
+worksNavyItems.forEach((item) => {
   item.addEventListener("click", function () {
+    if (worksNavyDisable) return;
     worksNavyItems.forEach((item) => item.classList.remove("active"));
     item.classList.add("active");
     worksNavy.classList.add("position-bottom");
@@ -82,9 +85,7 @@ worksNavyItems.forEach((item, index) => {
         page.children[0].classList.add("slider");
         currentWorkPage = page;
         sliderCon = currentWorkPage.querySelector(".slider");
-        let projectsCurrentCategory = page.id.slice(0, -8);
-        console.log(projectsCurrentCategory);
-        console.log(projectsCurrentCategory);
+        projectsCurrentCategory = page.id.slice(0, -8);
         generateCategory(Projects[projectsCurrentCategory]);
       }
     });
@@ -97,8 +98,7 @@ function generateCategory(arr) {
   sliderCon.removeAttribute("style");
   // Clear previous slides
   sliderCon.replaceChildren();
-  arr.map((card, index) => {
-    console.log(card);
+  arr.map((card) => {
     const cardCon = document.createElement("div");
     const projectImg = document.createElement("img");
     projectImg.src = card.src;
@@ -128,6 +128,16 @@ function generateCategory(arr) {
     dotColor: "#ffffff",
   });
 }
+// Slider rotate on handler
+rotateIcon.addEventListener("click", function () {
+  isSliderRotateAlwaysOn = !isSliderRotateAlwaysOn;
+  generateCategory(Projects[projectsCurrentCategory]);
+  rotateCover.classList.toggle("d-none");
+  worksNavyDisable = !worksNavyDisable;
+  isSliderRotateAlwaysOn
+    ? (rotateIcon.style.opacity = 1)
+    : (rotateIcon.style.opacity = 0.7);
+});
 // Header
 navItems.forEach((item) => {
   item.addEventListener("click", function () {

@@ -12,6 +12,7 @@
   font-size: 1.5rem;
   transition: 0.5s;
   overflow: hidden;
+  z-index: 1000;
 }
 .start-page {
   display: flex;
@@ -50,7 +51,6 @@
 }
 
 .works-navy {
-  z-index: 10;
   .container {
     > div {
       cursor: pointer;
@@ -65,7 +65,7 @@
     }
   }
   &.position-bottom {
-    height: 4rem;
+    height: 5rem;
     background-color: transparent;
     inset: unset;
     bottom: 0;

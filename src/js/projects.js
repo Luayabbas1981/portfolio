@@ -378,7 +378,7 @@ const dom = [
   },
 ];
 
-const react = [
+const spa = [
   {
     name: "Mack up shop Vue3",
     link: "https://aura-one-gold.vercel.app/",
@@ -524,4 +524,4 @@ const npm = [
   },
 ];
 
-export { css, dom, react, canvas, npm };
+export { css, dom, spa, canvas, npm };

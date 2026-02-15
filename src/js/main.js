@@ -2,6 +2,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "../scss/style.scss";
 import * as Projects from "./projects.js";
+import { initializeSlider } from "3d-slider";
+import "3d-slider/src/3d-slider.css";
 // check device
 const isMobile =
   /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
@@ -16,20 +18,24 @@ const worksNavy = document.querySelector(".works-navy");
 const startPage = document.querySelector(".start-page");
 const worksNavyCon = worksNavy.querySelector(".container");
 const worksNavyItems = worksNavyCon.querySelectorAll("div");
+const workPages = document.querySelectorAll(".works-pages .page");
 const startPageNavItems = document.querySelectorAll(
   ".start-page .list-con div",
 );
 const aboutMeCategories = document.querySelectorAll(
   ".about-me-categories .title",
 );
-const contact = document.getElementById("contact");
 const contactIcons = document.querySelectorAll(".icon");
 const contactInfos = document.querySelector(".infos");
 const contactInfosLink = contactInfos.children[0];
 const imageCon = document.querySelector(".image-con");
-
+const rotateCover = document.querySelector(".rotate-cover");
+const rotateIcon = document.querySelector(".rotate-icon");
 // Variables
 let currentPage = null;
+let currentWorkPage = workPages[0];
+let sliderCon = currentWorkPage.querySelector(".slider");
+let isSliderRotateAlwaysOn = false;
 
 // Modal
 startPageNavItems.forEach((item) => {
@@ -60,15 +66,68 @@ startPageNavItems.forEach((item) => {
   });
 });
 
-worksNavyItems.forEach((item) => {
+worksNavyItems.forEach((item, index) => {
   item.addEventListener("click", function () {
     worksNavyItems.forEach((item) => item.classList.remove("active"));
     item.classList.add("active");
     worksNavy.classList.add("position-bottom");
     worksNavyCon.classList.add("navy-pressed");
     header.classList.remove("d-none");
+    workPages.forEach((page) => {
+      page.classList.remove("active");
+      page.children[0].innerHTML = "";
+      page.children[0].classList.remove("slider");
+      if (page.id === item.dataset.category) {
+        page.classList.add("active");
+        page.children[0].classList.add("slider");
+        currentWorkPage = page;
+        sliderCon = currentWorkPage.querySelector(".slider");
+        let projectsCurrentCategory = page.id.slice(0, -8);
+        console.log(projectsCurrentCategory);
+        console.log(projectsCurrentCategory);
+        generateCategory(Projects[projectsCurrentCategory]);
+      }
+    });
   });
 });
+// Slider
+function generateCategory(arr) {
+  if (!sliderCon) return;
+  sliderCon.querySelectorAll("*").forEach((el) => el.removeAttribute("style"));
+  sliderCon.removeAttribute("style");
+  // Clear previous slides
+  sliderCon.replaceChildren();
+  arr.map((card, index) => {
+    console.log(card);
+    const cardCon = document.createElement("div");
+    const projectImg = document.createElement("img");
+    projectImg.src = card.src;
+    cardCon.appendChild(projectImg);
+    const projectLink = document.createElement("a");
+    projectLink.classList.add("card-link");
+    projectLink.href = card.link;
+    projectLink.target = "_blank";
+    cardCon.appendChild(projectLink);
+    const projectTitle = document.createElement("span");
+    projectTitle.textContent = card.name;
+    cardCon.appendChild(projectTitle);
+    sliderCon.appendChild(cardCon);
+  });
+  initializeSlider({
+    sliderContainerClass: "slider",
+    perspective: 2,
+    transitionDuration: 2.5,
+    alwaysOnMode: isSliderRotateAlwaysOn,
+    alwaysOnDesktopDuration: 15,
+    alwaysOnMobileDuration: 5,
+    cardsToShowLargeScreen: 11,
+    cardsToShowMediumScreen: 7,
+    cardsToShowSmallScreen: 4,
+    cardsToShowMobile: 3,
+    dotsMode: true,
+    dotColor: "#ffffff",
+  });
+}
 // Header
 navItems.forEach((item) => {
   item.addEventListener("click", function () {

@@ -1,4 +1,101 @@
 @use "../variables" as *;
 .works-pages {
-  background: $green-gradient;
+  .page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    &.active {
+      z-index: 6;
+    }
+  }
+  .rotate-cover {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: 200;
+  }
+  .rotate-icon {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    z-index: 1000;
+    cursor: pointer;
+    font-size: 2rem;
+    color: var(--white);
+    opacity: 0.6;
+  }
+  .slider {
+    .slider-3d {
+      .card-3d {
+        img {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          inset: 0;
+              border-top-left-radius: 15%;
+          border-bottom-right-radius: 15%;
+        }
+        a {
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          inset: 0;
+          display: block;
+        }
+        span {
+          position: absolute;
+          width: 100%;
+          height: 10%;
+          bottom: -12%;
+          margin-top: 0.5rem;
+          display: block;
+          text-align: center;
+          text-transform: uppercase;
+          font-family: "main";
+          font-style: italic;
+          background: linear-gradient(90deg, #8f8f8f, #ffffff, #ffffff);
+          background-size: 200%;
+          background-clip: text;
+          color: transparent;
+          animation: moving-text-bg 3s ease-in-out alternate infinite;
+        }
+      }
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .slider {
+      .card-3d span {
+        font-size: 3.5vw;
+      }
+      .slider-next-group-btn {
+        left: 110%;
+        top: 60%;
+      }
+      .slider-prev-group-btn {
+        left: -25% !important;
+        top: 60%;
+      }
+      span {
+        bottom: -15% !important;
+      }
+    }
+    .rotate-icon {
+      bottom: 85% !important;
+      right: 6% !important;
+      font-size: 1.2rem !important;
+    }
+  }
+  @keyframes moving-text-bg {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
 }

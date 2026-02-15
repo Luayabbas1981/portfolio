@@ -8,9 +8,9 @@ export default defineConfig({
     outDir: "../dist",
     emptyOutDir: true,
   },
-/*   plugins: [
+  plugins: [
     viteStaticCopy({
       targets: [{ src: "assets/**", dest: "assets" }],
     }),
-  ], */
+  ],
 });

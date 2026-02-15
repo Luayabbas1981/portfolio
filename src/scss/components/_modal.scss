@@ -52,7 +52,7 @@
 .works-navy {
   z-index: 10;
   .container {
-    div {
+    > div {
       cursor: pointer;
       transition: 0.5s;
       opacity: 0;

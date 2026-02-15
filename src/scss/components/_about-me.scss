@@ -1,6 +1,7 @@
 @use "../variables" as *;
 .about-me-page {
-  div, p {
+  div,
+  p {
     font-family: "main";
   }
   .about-me-categories {
@@ -171,8 +172,11 @@
           left: 48% !important;
 
           ul {
-            font-size: 0.6rem !important;
+            font-size: 0.75rem !important;
             transition: var(--transition) !important;
+            li {
+              margin-bottom: 0;
+            }
           }
         }
       }

@@ -31,6 +31,8 @@ startPageNavItems.forEach((item) => {
 
 worksNavyItems.forEach((item) => {
   item.addEventListener("click", function () {
+    worksNavyItems.forEach((item) => item.classList.remove("active"));
+    item.classList.add("active");
     worksNavyCon.classList.add("navy-pressed");
     header.classList.remove("d-none");
     worksNavy.style.cssText += `

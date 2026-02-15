@@ -1,6 +1,6 @@
 @use "../variables" as *;
 header {
-  height: 5dvh;
+  height: 8dvh;
   .container {
     div {
       color: $gray-300;
@@ -11,6 +11,9 @@ header {
       &.active,
       &:hover {
         color: $white;
+      }
+      @media screen and (orientation: portrait) {
+        font-size: 1rem;
       }
     }
   }

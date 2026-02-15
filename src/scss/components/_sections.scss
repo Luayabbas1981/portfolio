@@ -4,8 +4,10 @@ section {
   height: 100%;
   position: absolute;
   inset: 0;
-
   &.works-pages {
     background: $green-gradient;
+  }
+  &.active {
+    z-index: 5;
   }
 }

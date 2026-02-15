@@ -1,5 +1,8 @@
 @use "../variables" as *;
 .about-me-page {
+  div, p {
+    font-family: "main";
+  }
   .about-me-categories {
     height: 80% !important;
     translate: 2% 14%;
@@ -17,7 +20,6 @@
       }
       .title {
         position: absolute;
-        font-family: cards-font;
         cursor: pointer;
         height: 25%;
         left: 0;

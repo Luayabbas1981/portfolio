@@ -37,7 +37,7 @@
           height: 100%;
           position: absolute;
           inset: 0;
-              border-top-left-radius: 15%;
+          border-top-left-radius: 15%;
           border-bottom-right-radius: 15%;
         }
         a {
@@ -66,6 +66,18 @@
         }
       }
     }
+    .slider-next-btn,
+    .slider-prev-btn {
+      background-size: 80%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    .slider-next-group-btn,
+    .slider-prev-group-btn {
+      background-size: 90%;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
   }
   @media screen and (orientation: portrait) {
     .slider {
@@ -82,6 +94,12 @@
       }
       span {
         bottom: -15% !important;
+      }
+      .slider-next-btn {
+        right: 20%;
+      }
+      .slider-prev-btn {
+        left: 20%;
       }
     }
     .rotate-icon {

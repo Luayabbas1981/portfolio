@@ -140,6 +140,7 @@
   }
   @media screen and (orientation: portrait) {
     .about-me-categories {
+        height: 85% !important;
       > div {
         height: 10% !important;
         transition: 1s !important;
@@ -172,7 +173,7 @@
           left: 48% !important;
 
           ul {
-            font-size: 0.75rem !important;
+            font-size: 0.8rem !important;
             transition: var(--transition) !important;
             li {
               margin-bottom: 0;

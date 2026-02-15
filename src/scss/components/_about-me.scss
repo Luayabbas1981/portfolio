@@ -1,0 +1,179 @@
+@use "../variables" as *;
+.about-me-page {
+  .about-me-categories {
+    height: 80% !important;
+    translate: 2% 14%;
+
+    > div {
+      position: relative;
+      height: 100%;
+      display: block;
+      align-items: center !important;
+      border-right: none !important;
+      transition: 2s;
+      &.is-compact {
+        height: 10% !important;
+        transition: 1s !important;
+      }
+      .title {
+        position: absolute;
+        font-family: cards-font;
+        cursor: pointer;
+        height: 25%;
+        left: 0;
+        writing-mode: vertical-rl;
+        font-size: 1.2rem;
+        scale: -1;
+        translate: 0 calc(var(--trans-text) * -20%);
+        background: linear-gradient(90deg, #8f8f8f, #ffffff, #ffffff);
+        background-size: 200%;
+        background-clip: text;
+        color: transparent;
+        animation: moving-text-bg 5s ease-in-out alternate infinite;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -2%;
+          left: -0.3rem;
+          width: 1px;
+          height: 110%;
+          border-right: 1px solid var(--color, #fff);
+        }
+
+        &.is-horizontal {
+          height: auto !important;
+          margin-bottom: 0;
+          left: 3% !important;
+          bottom: 0;
+          writing-mode: horizontal-tb !important;
+          font-size: 0.8rem !important;
+          scale: 1 !important;
+          translate: 0 !important;
+
+          &::after {
+            bottom: -5px;
+            width: calc(var(--text-w) * 60%) !important;
+            height: auto;
+            border-bottom: 1px solid var(--color, #fff);
+            border-right: none !important;
+          }
+        }
+      }
+      .info {
+        position: absolute;
+        transform-origin: center;
+        width: 85%;
+        height: 75%;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+        background-color: var(--transparent-black);
+        backdrop-filter: blur(10px);
+        border-radius: 5%;
+        scale: 0 1;
+        color: $white;
+        cursor: auto;
+        writing-mode: horizontal-tb;
+        div {
+          transition: 0.5s;
+        }
+        ul {
+          padding: 5%;
+          opacity: 0;
+          color: var(--white);
+          transition: 0.5s;
+
+          p {
+            font-weight: bold;
+          }
+
+          li {
+            padding-bottom: 2%;
+
+            &::selection {
+              background-color: #9900ff;
+            }
+          }
+        }
+        div {
+          opacity: 0;
+
+          ul {
+            opacity: 1;
+          }
+        }
+        &.is-compact {
+          padding-left: 0.5%;
+          height: 90% !important;
+          top: 60% !important;
+          left: 48% !important;
+
+          ul {
+            font-size: 0.6rem !important;
+            transition: var(--transition) !important;
+          }
+        }
+      }
+    }
+  }
+  .about-me-sec-scale {
+    scale: 1 !important;
+  }
+
+  .about-me-sec-list {
+    opacity: 1 !important;
+  }
+  .about-me-title-trans {
+    bottom: 92% !important;
+  }
+  @keyframes moving-text-bg {
+    0% {
+      background-position: 0%;
+    }
+    100% {
+      background-position: 200%;
+    }
+  }
+  @media screen and (orientation: portrait) {
+    .about-me-categories {
+      > div {
+        height: 10% !important;
+        transition: 1s !important;
+
+        .title {
+          height: auto !important;
+          margin-bottom: 0;
+          left: 3% !important;
+          bottom: 0;
+          writing-mode: horizontal-tb !important;
+          font-size: 0.8rem !important;
+          scale: 1 !important;
+          translate: 0 !important;
+
+          &::after {
+            content: "";
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: calc(var(--text-w) * 60%) !important;
+            border-bottom: 1px solid var(--color, #fff);
+            border-right: none !important;
+          }
+        }
+
+        .info {
+          padding-left: 0.5%;
+          height: 90% !important;
+          top: 60% !important;
+          left: 48% !important;
+
+          ul {
+            font-size: 0.6rem !important;
+            transition: var(--transition) !important;
+          }
+        }
+      }
+    }
+  }
+}

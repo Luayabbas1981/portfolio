@@ -6,25 +6,25 @@
     <title>portfolio</title>
   </head>
   <body>
-    <header class="fixed-top d-flex justify-content-around">
+    <header class="fixed-top d-flex justify-content-around d-none">
       <div
         class="container m-auto d-flex justify-content-around align-items-center"
       >
         <div id="works">Works</div>
-        <div id="about-me"> About me</div>
+        <div id="about-me">About me</div>
         <div id="contact">Contact</div>
       </div>
     </header>
     <main>
+      <section class="contact-page"></section>
+      <section class="about-me-page"></section>
       <section class="works-pages position-relative">
-        <div id="css-section"></div>
-        <div id="dom-section"></div>
-        <div id="spa-section"></div>
-        <div id="canvas-section"></div>
-        <div id="npm-section"></div>
+        <div id="npm-section" class="page"></div>
+        <div id="canvas-section" class="page"></div>
+        <div id="spa-section" class="page"></div>
+        <div id="dom-section" class="page"></div>
+        <div id="css-section" class="page"></div>
       </section>
-      <section class="about-me"></section>
-      <section class="contact"></section>
     </main>
     <div class="works-navy d-none">
       <div
@@ -41,7 +41,9 @@
       <div class="row container m-auto gap-5 gap-md-0">
         <div class="list-con col-md-7">
           <div style="--x: -1; --delay: 1" data-section="works">View works</div>
-          <div style="--x: -1; --delay: 2" data-section="about-me">About me</div>
+          <div style="--x: -1; --delay: 2" data-section="about-me">
+            About me
+          </div>
           <div style="--x: -1; --delay: 3" data-section="contact">Contact</div>
         </div>
         <div class="image-con col-md-4" style="--x: 1; --delay: 4">

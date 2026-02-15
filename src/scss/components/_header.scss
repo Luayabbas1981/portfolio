@@ -1,3 +1,17 @@
+@use "../variables" as *;
 header {
   height: 5dvh;
+  .container {
+    div {
+      color: $gray-300;
+      font-family: "main";
+      font-size: 1.5rem;
+      transition: 0.5s;
+      cursor: pointer;
+      &.active,
+      &:hover {
+        color: $white;
+      }
+    }
+  }
 }

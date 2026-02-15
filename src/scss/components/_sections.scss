@@ -1,0 +1,11 @@
+@use "../variables" as *;
+section {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+
+  &.works-pages {
+    background: $green-gradient;
+  }
+}

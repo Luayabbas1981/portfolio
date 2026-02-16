@@ -381,7 +381,7 @@ const dom = [
 const spa = [
   {
     name: "Mack up shop Vue3",
-    link: "https://aura-one-gold.vercel.app/",
+    link: "https://aura-sigma-one.vercel.app/",
     title: "Vue3 - API",
     src: "./assets/images/reactImages/Aura.png",
   },

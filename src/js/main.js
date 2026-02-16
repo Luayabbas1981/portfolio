@@ -49,6 +49,7 @@ startPageNavItems.forEach((item) => {
       startPage.classList.add("d-none");
       if (item.dataset.section === "works") {
         worksNavy.classList.remove("d-none");
+        rotateIcon.classList.remove("d-none");
       } else {
         header.classList.remove("d-none");
         worksNavy.classList.add("navy-pressed");
@@ -144,9 +145,14 @@ navItems.forEach((item) => {
     navItems.forEach((item) => item.classList.remove("active"));
     item.classList.add("active");
     currentPage = item.id;
-    item.id === "works"
-      ? worksNavy.classList.remove("d-none")
-      : worksNavy.classList.add("d-none");
+    if (item.id === "works") {
+      worksNavy.classList.remove("d-none");
+      rotateIcon.classList.remove("d-none");
+    } else {
+      worksNavy.classList.add("d-none");
+      rotateIcon.classList.add("d-none");
+    }
+
     sections.forEach((section) => {
       item.id === section.dataset.section
         ? section.classList.add("active")

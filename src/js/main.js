@@ -32,6 +32,7 @@ const imageCon = document.querySelector(".image-con");
 const rotateCover = document.querySelector(".rotate-cover");
 const rotateIcon = document.querySelector(".rotate-icon");
 const sliderRange = document.querySelector(".slider-range");
+const tools = document.querySelector(".tools");
 
 // Variables
 let currentPage = null;
@@ -51,7 +52,7 @@ startPageNavItems.forEach((item) => {
       startPage.classList.add("d-none");
       if (item.dataset.section === "works") {
         worksNavy.classList.remove("d-none");
-        rotateIcon.classList.remove("d-none");
+        tools.classList.remove("d-none");
       } else {
         header.classList.remove("d-none");
         worksNavy.classList.add("navy-pressed");
@@ -156,10 +157,12 @@ navItems.forEach((item) => {
     currentPage = item.id;
     if (item.id === "works") {
       worksNavy.classList.remove("d-none");
-      rotateIcon.classList.remove("d-none");
+      tools.classList.remove("d-none");
     } else {
       worksNavy.classList.add("d-none");
       rotateIcon.classList.add("d-none");
+      tools.classList.add("d-none");
+   
     }
 
     sections.forEach((section) => {

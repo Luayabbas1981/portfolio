@@ -132,12 +132,11 @@ function generateCategory(arr) {
     dotsMode: true,
     dotColor: "#ffffff",
   });
-  const slider3d = document.querySelector(".slider-3d");
-  if (slider3d) {
-    sliderRange.addEventListener("input", function () {
-      slider3d.style.setProperty("--rotateX", `${sliderRange.value}deg`);
-    });
-  }
+ sliderRange.addEventListener("input", function () {
+   workPages.forEach((page) => {
+     page.style.setProperty("--rotateX", `${sliderRange.value}deg`);
+   });
+ });
 }
 // Slider rotate on handler
 rotateIcon.addEventListener("click", function () {

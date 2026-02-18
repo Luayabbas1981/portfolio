@@ -19,9 +19,9 @@
     left: 0;
     z-index: 200;
   }
-  .rotate-icon {
+  .tools{
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     right: 15%;
     z-index: 1000;
     cursor: pointer;
@@ -29,9 +29,11 @@
     color: $white;
     opacity: 0.6;
     z-index: 250;
+    row-gap: 2rem;
   }
   .slider {
     .slider-3d {
+      rotate: x var(--rotateX, 0deg);
       .card-3d {
         img {
           width: 100%;
@@ -107,10 +109,12 @@
         margin-bottom: 5%;
       }
     }
-    .rotate-icon {
+    .tools {
       bottom: 85% !important;
-      right: 6% !important;
+      left: 50% !important;
+      translate: -50% 0;
       font-size: 1.2rem !important;
+      column-gap: 2rem;
     }
   }
   @keyframes moving-text-bg {
@@ -120,5 +124,21 @@
     100% {
       background-position: 200%;
     }
+  }
+  
+  .slider-range {
+  --accent: #0c74af; 
+  accent-color: var(--accent); 
+}
+  .mid-marker {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 2px;
+    height: 12px;
+    background: currentColor;
+    pointer-events: none;
+    opacity: 0.7;
   }
 }

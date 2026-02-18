@@ -156,7 +156,20 @@
         </div>
         <div id="npm-section" class="page"><div class="slider h-75"></div></div>
         <div class="rotate-cover w-100 h-100 d-none"></div>
-        <div class="rotate-icon d-none"><i class="fa-solid fa-rotate"></i></div>
+        <div class="tools d-flex flex-lg-column justify-content-center align-items-center">
+           <div class="rotate-icon d-none"><i class="fa-solid fa-rotate"></i></div>
+        <div class="range-wrap">
+          <input
+            type="range"
+            class="slider-range"
+            min="-10"
+            max="10"
+            value="0"
+          />
+          <span class="mid-marker" aria-hidden="true"></span>
+        </div>
+        </div>
+       
       </section>
     </main>
     <div class="works-navy d-none">

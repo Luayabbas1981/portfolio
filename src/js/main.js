@@ -31,6 +31,8 @@ const contactInfosLink = contactInfos.children[0];
 const imageCon = document.querySelector(".image-con");
 const rotateCover = document.querySelector(".rotate-cover");
 const rotateIcon = document.querySelector(".rotate-icon");
+const sliderRange = document.querySelector(".slider-range");
+
 // Variables
 let currentPage = null;
 let projectsCurrentCategory = "css";
@@ -114,6 +116,7 @@ function generateCategory(arr) {
     cardCon.appendChild(projectTitle);
     sliderCon.appendChild(cardCon);
   });
+
   initializeSlider({
     sliderContainerClass: "slider",
     perspective: 2,
@@ -128,6 +131,12 @@ function generateCategory(arr) {
     dotsMode: true,
     dotColor: "#ffffff",
   });
+  const slider3d = document.querySelector(".slider-3d");
+  if (slider3d) {
+    sliderRange.addEventListener("input", function () {
+      slider3d.style.setProperty("--rotateX", `${sliderRange.value}deg`);
+    });
+  }
 }
 // Slider rotate on handler
 rotateIcon.addEventListener("click", function () {

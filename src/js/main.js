@@ -153,6 +153,7 @@ navItems.forEach((item) => {
   item.addEventListener("click", function () {
     navItems.forEach((item) => item.classList.remove("active"));
     item.classList.add("active");
+    rotateCover.classList.add("d-none");
     currentPage = item.id;
     if (item.id === "works") {
       worksNavy.classList.remove("d-none");

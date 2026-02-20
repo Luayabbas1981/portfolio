@@ -132,11 +132,11 @@ function generateCategory(arr) {
     dotsMode: true,
     dotColor: "#ffffff",
   });
- sliderRange.addEventListener("input", function () {
-   workPages.forEach((page) => {
-     page.style.setProperty("--rotateX", `${sliderRange.value}deg`);
-   });
- });
+  sliderRange.addEventListener("input", function () {
+    workPages.forEach((page) => {
+      page.style.setProperty("--rotateX", `${sliderRange.value}deg`);
+    });
+  });
 }
 // Slider rotate on handler
 rotateIcon.addEventListener("click", function () {
@@ -158,11 +158,12 @@ navItems.forEach((item) => {
     if (item.id === "works") {
       worksNavy.classList.remove("d-none");
       tools.classList.remove("d-none");
+      if (isSliderRotateAlwaysOn) {
+        rotateCover.classList.remove("d-none");
+      }
     } else {
       worksNavy.classList.add("d-none");
-      rotateIcon.classList.add("d-none");
       tools.classList.add("d-none");
-   
     }
 
     sections.forEach((section) => {
